@@ -11,11 +11,15 @@
 			<h2><a href="">My first post</a></h2>
 			<p>Ez az első blogbejegyzésem. Szombat későfélutáni órákban már eléggé elfáradtam benne.</p>
 		</div>
-<div>
-            <p>published: 21.11.2015</p>
-            <h2><a href="">My second post</a></h2>
-            <p> Random dolgok...</p>
-        </div>
+
+{% for post in posts %}
+	<div>
+		<p>published:{{post.published_date}}</p>
+		<h1><a href="">{{post.title}}</a></h1>
+		<p>{{post.text|linebreaks }}</p>
+        	
+     </div>
+{% endfor %}
 
 	</body>
 </html>
